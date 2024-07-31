@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website with Revou</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/script.js">
 </head>
 <body>
     <div class="background-container">
+        <!-- Header -->
         <header class="header">
             <div class="navigation-bar">
                 <div class="container">
@@ -15,51 +17,177 @@
                         <a href="/" class="logo"><img src="/img/WataShuu.png" alt="logo"></a>
                         <nav class="navbar">
                             <ul class="nav-list">
-                                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                                <li class="nav-item"><a href="#" class="nav-link">Our Package</a></li>
-                                <li class="nav-item"><a href="#" class="nav-link">Call Us</a></li>
+                                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                                <li class="nav-item"><a href="#service" class="nav-link">Service</a></li>
+                                <li class="nav-item"><a href="#package" class="nav-link">Our Package</a></li>
+                                <li class="nav-item"><a href="#cta" class="nav-link">Call Us</a></li>
+                                <li class="nav-item"><a href="#client" class="nav-link">Client</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
             </div>
         </header>
-
+    
+        <!-- Home -->
         <section class="home">
             <div class="container">
                 <div class="top-content">
-                    <h1>Your <span class="dynamic-text">Trusted</span> Travel Agent's</h1>
+                    <h1>Your Trusted Travel Agent's</h1>
                     <h4>Your happiness is our happiness</h4>
                 </div>
-                <div class="bottom-content">
-                </div>
+                <div class="bottom-content"></div>
             </div>
         </section>
-    </div>
+    </div>    
 
-    <section class="package">
+    <!-- Package -->
+    <section class="package" id="package">
         <div class="container">
+            <div class="title">
+                <h1>Our Package</h1>
+            </div>
             <div class="package-content">
-                <div class="title">
-                    <h1>Our Package</h1>
+                <div class="content-list">
+                    <img src="img/japan.jpg" alt="Japan" />
+                    <div class="layer">
+                        <h3>Japan</h3>
+                        <p>
+                            Experience the unique blend of tradition and modernity in Japan. Explore ancient 
+                            temples, futuristic cities, and breathtaking natural beauty.
+                        </p>
+                    </div>
                 </div>
-                <div class="content">
-                    <h1>Bali dll</h1>
+                <div class="content-list">
+                    <img src="img/china.jpg" alt="China" />
+                    <div class="layer">
+                        <h3>China</h3>
+                        <p>
+                            Discover the rich history and culture of China, from the Great Wall to dynamic 
+                            cities like Beijing and Shanghai, along with its delightful cuisine.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-list">
+                    <img src="img/england.jpg" alt="England" />
+                    <div class="layer">
+                        <h3>England</h3>
+                        <p>
+                            Explore England's history and charm by visiting grand palaces, historic cities, 
+                            and beautiful countryside landscapes.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-list">
+                    <img src="img/india.jpg" alt="India" />
+                    <div class="layer">
+                        <h3>India</h3>
+                        <p>
+                            Experience India's rich culture and spirituality. Visit the Taj Mahal, colorful 
+                            festivals, and enjoy the diverse and tantalizing cuisine.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-list">
+                    <img src="img/italy.jpg" alt="Italy" />
+                    <div class="layer">
+                        <h3>Italy</h3>
+                        <p>
+                            Enjoy the beauty of Italy with unmatched art, history, and cuisine. Visit Rome, 
+                            Venice, and Florence for an unforgettable experience.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-list">
+                    <img src="img/paris.jpg" alt="Paris" />
+                    <div class="layer">
+                        <h3>Paris</h3>
+                        <p>
+                            The city of love and light, Paris offers stunning architecture, art, and fashion. 
+                            Enjoy the Eiffel Tower, the Louvre, and romantic cafes.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-list">
+                    <img src="img/singapore.jpg" alt="Singapore" />
+                    <div class="layer">
+                        <h3>Singapore</h3>
+                        <p>
+                            Modern and green, Singapore offers beautiful gardens, world-class shopping, and 
+                            a diverse and impressive culinary scene.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-list">
+                    <img src="img/turki.jpg" alt="Turkey" />
+                    <div class="layer">
+                        <h3>Turkey</h3>
+                        <p>
+                            Discover the blend of Eastern and Western cultures in Turkey. Explore historic 
+                            Istanbul, the stunning landscapes of Cappadocia, and beautiful beaches on the 
+                            Turkish Riviera.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="call-to-action">
+    <!-- Call to Action -->
+    <section class="call-to-action" id="cta">
         <div class="container">
             <div class="cta-content">
-                <button>Call to Action</button>
+                <h1>Discover Your Dream Vacation</h1>
+                <p>Ready to explore the world? Whether you're seeking adventure, relaxation, or a cultural 
+                    experience, we have the perfect holiday package for you. Don't wait—your dream vacation 
+                    is just a click away!</p>
+                <a href="#contact" class="btn-book">Book Now</a>
             </div>
         </div>
     </section>
 
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                <h1 class="sub-title">Contact Us</h1>
+                <p><i class="fa-solid fa-envelope"></i> travelagency@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> +62 xxxxxxxxxxxx</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                </div>
+                </div>
+                <div class="contact-right">
+                <form action="">
+                    <input type="text" name="Name" placeholder="Your Name" required />
+                    <input type="email" name="email" placeholder="Your Email" required/>
+                    <select name="options" required>
+                        <option value="" disabled selected>Select an Option</option>
+                        <option value="Japan">Japan</option>
+                        <option value="China">China</option>
+                        <option value="England">England</option>
+                        <option value="India">India</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Paris">Paris</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Turkey">Turkey</option>
+                    </select>
+                    <button type="submit" class="btn btn2">Call Now</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="my-footer">
         &copy; Created by Fazry Javier
     </footer>
+
+    <script src="https://kit.fontawesome.com/0dc8571071.js" crossorigin="anonymous"></script>
 </body>
 </html>

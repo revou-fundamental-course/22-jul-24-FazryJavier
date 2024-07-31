@@ -14,7 +14,7 @@ html {
 
 body {
     color: #0c0c0c;
-    background-color: #ffffff;
+    background-color: #EEF5FF;
     overflow-x: hidden;
 }
 
@@ -124,9 +124,241 @@ a {
     font-size: 24px;
 }
 
+/* Package */
+.package {
+    background-color: #86B6F6;
+    padding-bottom: 25px;
+}
+
+.package .title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.package .title h1 {
+    font-size: 32px;
+}
+
+.package .package-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 40px;
+    margin-top: 20px;
+}
+
+.package .package-content .content-list {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.package .package-content .content-list img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.package .package-content .content-list .layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #B4D4FF);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 16px;
+    transition: height 0.5s;
+}
+
+.package .package-content .content-list .layer h3 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.package .package-content .content-list:hover img {
+    transform: scale(1.1);
+}
+.package .package-content .content-list:hover .layer {
+    height: 100%;
+}
+
+/* Call to Action */
+.call-to-action {
+    position: relative;
+    background-image: url('../img/adventure.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 0;
+    min-height: 30vh;
+}
+
+.call-to-action::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.call-to-action .cta-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 40px;
+}
+
+.call-to-action .cta-content h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #EEF5FF;
+}
+
+.call-to-action .cta-content p {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: #EEF5FF;
+}
+
+.call-to-action .cta-content .btn-book {
+    padding: 15px 60px;
+    background-color: #86B6F6;
+    color: #0c0c0c;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 16px;
+    text-align: center;
+}
+
+.call-to-action .cta-content .btn-book:hover {
+    background-color: #176B87;
+}
+
+/* Contact */
+.contact .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px 0;
+}
+
+.contact .contact-left p {
+    margin-top: 20px;
+}
+
+.contact .contact-left p i {
+    color: #86B6F6;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.contact .social-icons {
+    margin-top: 30px;
+}
+
+.contact .social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #86B6F6;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.contact .social-icons a:hover {
+    color: #176B87;
+    transform: translateY(-5px);
+}
+
+.contact .contact-right form {
+    width: 100%;
+}
+
+.contact form input,
+.contact form select {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #176B87;
+    padding: 15px;
+    margin: 15px 0;
+    color: #EEF5FF;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+input::placeholder {
+    color: #EEF5FF;
+    opacity: 1;
+}
+
+select {
+    color: #EEF5FF;
+}
+
+select option[value=""][disabled] {
+    color: #EEF5FF;
+}
+
+.contact form .btn2 {
+    padding: 15px 60px;
+    background-color: #86B6F6;
+    color: #0c0c0c;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.contact form .btn2:hover {
+    background-color: #176B87;
+}
+
 /* Footer */
 .my-footer {
     background: #B4D4FF;
     padding: 20px 10px;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    /* Call to Action */
+    .call-to-action .cta-content {
+        padding: 0 40px;
+    }
+    .call-to-action .cta-content h1 {
+        font-size: 24px;
+    }
+    .call-to-action .cta-content p {
+        font-size: 18px;
+    }
+    .call-to-action .cta-content .btn-book {
+        padding: 10px 40px;
+        font-size: 14px;
+    }
 }
