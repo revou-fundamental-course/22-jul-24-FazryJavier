@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // Bacgkground slideshow
 document.addEventListener('DOMContentLoaded', function() {
     const backgrounds = [
-        '../img/tokyo.jpg',
-        '../img/guilin.jpg',
-        '../img/paris.jpg',
-        '../img/london.jpg',
+        'img/tokyo.jpg',
+        'img/guilin.jpg',
+        'img/paris.jpg',
+        'img/london.jpg',
     ];
 
     let currentBackgroundIndex = 0;
