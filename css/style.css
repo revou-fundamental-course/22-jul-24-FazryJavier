@@ -10,6 +10,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
@@ -32,22 +33,49 @@ a {
 
 /* Background Container */
 .background-container {
-    background-image: url('../img/tokyo.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
+    transition: background-image 0.5s ease-in-out;
+    position: relative;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.nav-button.left {
+    left: 10px;
+}
+
+.nav-button.right {
+    right: 10px;
 }
 
 /* Header */
 .header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    width: 100%;
     height: 100px;
+    z-index: 1000;
+    transition: background 0.3s ease;
 }
 
 .navigation-bar {
     color: #242424;
     background: rgba(180, 212, 255, 0.4);
+    transition: background 0.3s ease;
 }
 
 .navigation-bar .navigation-bar-content {
@@ -64,7 +92,7 @@ a {
 }
 
 .navigation-bar .logo img {
-    width: 100px;
+    width: 80px;
 }
 
 .navbar {
@@ -95,13 +123,17 @@ a {
     color: #0c0c0c;
 }
 
+.scrolled .navigation-bar {
+    background: rgba(180, 212, 255, 1);
+}
+
 /* Home */
 .home {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px 0;
+    padding: 150px 0 50px;
     text-align: center;
     height: 80vh;
 }
@@ -111,17 +143,86 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 20px;
 }
 
 .home .top-content h1 {
-    color: #0c0c0c;
+    color: #176B87;
     font-size: 42px;
     margin-bottom: 20px;
 }
 
 .home .top-content h4 {
-    color: #0c0c0c;
+    color: #176B87;
     font-size: 24px;
+}
+
+/* Services */
+.service {
+    padding: 30px 0;
+}
+
+.service .title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.service .title h1 {
+    font-size: 32px;
+}
+
+.service .services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 20px;
+}
+
+.service .services-list div {
+    background: #86B6F6;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.service .services-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.service .services-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.service .services-list div p {
+    text-decoration: none;
+    color: #0c0c0c;
+    font-size: 16px;
+    margin-top: 10px;
+    display: inline-block;
+    line-height: 1.5;
+}
+
+.service .services-list div a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.service .services-list div:hover {
+    background: #176B87;
+    transform: translateY(-10px);
 }
 
 /* Package */

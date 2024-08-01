@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website with Revou</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="js/script.js">
 </head>
 <body>
     <div class="background-container">
@@ -21,7 +20,6 @@
                                 <li class="nav-item"><a href="#service" class="nav-link">Service</a></li>
                                 <li class="nav-item"><a href="#package" class="nav-link">Our Package</a></li>
                                 <li class="nav-item"><a href="#cta" class="nav-link">Call Us</a></li>
-                                <li class="nav-item"><a href="#client" class="nav-link">Client</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -30,7 +28,7 @@
         </header>
     
         <!-- Home -->
-        <section class="home">
+        <section class="home" id="home">
             <div class="container">
                 <div class="top-content">
                     <h1>Your Trusted Travel Agent's</h1>
@@ -38,10 +36,47 @@
                 </div>
                 <div class="bottom-content"></div>
             </div>
+            <button id="prevButton" class="nav-button left">&lt;</button>
+            <button id="nextButton" class="nav-button right">&gt;</button>
         </section>
-    </div>    
+    </div>  
+    
+    <!-- Our Service -->
+    <section class="service" id="service">
+        <div class="container">
+            <div class="title">
+                <h1>Our Service</h1>
+            </div>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-location"></i>
+                    <h2>Unique Destinations</h2>
+                    <p>
+                        Uncover the hidden gems of every corner of the world with our exclusive
+                        travel packages designed to provide unforgettable experiences.
+                    </p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-book"></i>
+                    <h2>Personalized Travel Plans</h2>
+                    <p>
+                        Enjoy a stress-free journey with our tailored planning services, ensuring
+                        maximum comfort and satisfaction by catering to your personal preferences.
+                    </p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-clock"></i>
+                    <h2>24/7 Customer Support</h2>
+                    <p>
+                        Our professional team is available around the clock, offering assistance 
+                        and information to ensure a smooth and enjoyable travel experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Package -->
+    <!-- Our Package -->
     <section class="package" id="package">
         <div class="container">
             <div class="title">
@@ -99,7 +134,7 @@
                     </div>
                 </div>
                 <div class="content-list">
-                    <img src="img/paris.jpg" alt="Paris" />
+                    <img src="img/france.jpg" alt="Paris" />
                     <div class="layer">
                         <h3>Paris</h3>
                         <p>
@@ -162,22 +197,22 @@
                 </div>
                 </div>
                 <div class="contact-right">
-                <form action="">
-                    <input type="text" name="Name" placeholder="Your Name" required />
-                    <input type="email" name="email" placeholder="Your Email" required/>
-                    <select name="options" required>
-                        <option value="" disabled selected>Select an Option</option>
-                        <option value="Japan">Japan</option>
-                        <option value="China">China</option>
-                        <option value="England">England</option>
-                        <option value="India">India</option>
-                        <option value="Italy">Italy</option>
-                        <option value="Paris">Paris</option>
-                        <option value="Singapore">Singapore</option>
-                        <option value="Turkey">Turkey</option>
-                    </select>
-                    <button type="submit" class="btn btn2">Call Now</button>
-                </form>
+                    <form id="contactForm">
+                        <input type="text" name="Name" placeholder="Your Name" required />
+                        <input type="email" name="email" placeholder="Your Email" required/>
+                        <select name="options" required>
+                            <option value="" disabled selected>Select an Option</option>
+                            <option value="Japan">Japan</option>
+                            <option value="China">China</option>
+                            <option value="England">England</option>
+                            <option value="India">India</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Paris">Paris</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Turkey">Turkey</option>
+                        </select>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -188,6 +223,7 @@
         &copy; Created by Fazry Javier
     </footer>
 
+    <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/0dc8571071.js" crossorigin="anonymous"></script>
 </body>
 </html>
