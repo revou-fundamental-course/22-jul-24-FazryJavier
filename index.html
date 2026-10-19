@@ -3,227 +3,336 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website with Revou</title>
+    <title>Wanderly Travel — Trusted Travel Agent, Easy Booking</title>
+    <meta name="description" content="Wanderly Travel crafts unforgettable trips to Japan, Italy, Paris and more. Browse curated packages and book in minutes.">
+    <meta name="theme-color" content="#176B87">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wanderly Travel — Trusted Travel Agent, Easy Booking">
+    <meta property="og:description" content="Curated trips to Japan, Italy, Paris and more. Book in minutes.">
+    <meta property="og:image" content="img/tokyo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="css/style.css">
+    <script>document.documentElement.classList.add('js');</script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Wanderly Travel",
+        "description": "Curated travel packages with easy online booking.",
+        "email": "hello@wanderly.example",
+        "telephone": "+6281234567890",
+        "address": { "@type": "PostalAddress", "addressLocality": "Bandung", "addressCountry": "ID" }
+    }
+    </script>
 </head>
 <body>
-    <div class="background-container">
-        <!-- Header -->
-        <header class="header">
-            <div class="navigation-bar">
-                <div class="container">
-                    <div class="navigation-bar-content">
-                        <a href="/" class="logo"><img src="img/WataShuu.png" alt="logo"></a>
-                        <nav class="navbar">
-                            <ul class="nav-list">
-                                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                                <li class="nav-item"><a href="#service" class="nav-link">Service</a></li>
-                                <li class="nav-item"><a href="#package" class="nav-link">Our Package</a></li>
-                                <li class="nav-item"><a href="#cta" class="nav-link">Call Us</a></li>
-                            </ul>
-                        </nav>
-                    </div>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="#home" class="brand" aria-label="Wanderly Travel">
+                <img src="img/logo.svg" alt="" width="40" height="40">
+                <span>Wanderly</span>
+            </a>
+
+            <nav class="nav" id="nav" aria-label="Main">
+                <ul class="nav__list">
+                    <li><a href="#home" class="nav__link" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#services" class="nav__link" data-i18n="nav.services">Services</a></li>
+                    <li><a href="#packages" class="nav__link" data-i18n="nav.packages">Packages</a></li>
+                    <li><a href="#reviews" class="nav__link" data-i18n="nav.reviews">Reviews</a></li>
+                    <li><a href="#faq" class="nav__link" data-i18n="nav.faq">FAQ</a></li>
+                    <li><a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <div class="lang" role="group" data-i18n-attr="aria-label:nav.lang" aria-label="Language">
+                    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+                    <button type="button" data-lang="id" aria-pressed="false">ID</button>
+                </div>
+                <a href="#contact" class="btn btn--primary btn--sm btn-book" data-i18n="nav.book">Book Now</a>
+                <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="nav"
+                        data-i18n-attr="aria-label:nav.menu" aria-label="Toggle menu">
+                    <span class="menu-toggle__bars"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="hero__slides" id="heroSlides" aria-hidden="true">
+                <img src="img/tokyo.jpg" alt="" class="is-active" fetchpriority="high">
+                <img src="img/guilin.jpg" alt="" loading="lazy">
+                <img src="img/paris.jpg" alt="" loading="lazy">
+                <img src="img/london.jpg" alt="" loading="lazy">
+            </div>
+            <div class="container hero__content">
+                <span class="hero__chip" data-i18n="hero.chip">✈ Trusted by 12,000+ travelers</span>
+                <h1 data-i18n="hero.title">Travel made simple. Memories made to last.</h1>
+                <p data-i18n="hero.subtitle">From Tokyo temples to Parisian cafés, we plan every detail so you can simply enjoy the journey.</p>
+                <div class="hero__cta">
+                    <a href="#packages" class="btn btn--accent" data-i18n="hero.explore">Explore Packages</a>
+                    <a href="#contact" class="btn btn--ghost" data-i18n="hero.book">Book a Trip</a>
                 </div>
             </div>
-        </header>
-    
-        <!-- Home -->
-        <section class="home" id="home">
-            <div class="container">
-                <div class="top-content">
-                    <h1>Your Trusted Travel Agent's</h1>
-                    <h4>Your happiness is our happiness</h4>
-                </div>
-                <div class="bottom-content"></div>
-            </div>
-            <button id="prevButton" class="nav-button left">&lt;</button>
-            <button id="nextButton" class="nav-button right">&gt;</button>
+            <button type="button" class="hero__arrow hero__arrow--prev" id="heroPrev"
+                    data-i18n-attr="aria-label:hero.prev" aria-label="Previous slide">&#10094;</button>
+            <button type="button" class="hero__arrow hero__arrow--next" id="heroNext"
+                    data-i18n-attr="aria-label:hero.next" aria-label="Next slide">&#10095;</button>
+            <div class="hero__dots" id="heroDots" role="group" data-i18n-attr="aria-label:hero.dots" aria-label="Choose slide"></div>
         </section>
-    </div>  
-    
-    <!-- Our Service -->
-    <section class="service" id="service">
-        <div class="container">
-            <div class="title">
-                <h1>Our Service</h1>
-            </div>
-            <div class="services-list">
-                <div>
-                    <i class="fa-solid fa-location"></i>
-                    <h2>Unique Destinations</h2>
-                    <p>
-                        Uncover the hidden gems of every corner of the world with our exclusive
-                        travel packages designed to provide unforgettable experiences.
-                    </p>
-                </div>
-                <div>
-                    <i class="fa-solid fa-book"></i>
-                    <h2>Personalized Travel Plans</h2>
-                    <p>
-                        Enjoy a stress-free journey with our tailored planning services, ensuring
-                        maximum comfort and satisfaction by catering to your personal preferences.
-                    </p>
-                </div>
-                <div>
-                    <i class="fa-solid fa-clock"></i>
-                    <h2>24/7 Customer Support</h2>
-                    <p>
-                        Our professional team is available around the clock, offering assistance 
-                        and information to ensure a smooth and enjoyable travel experience.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Our Package -->
-    <section class="package" id="package">
-        <div class="container">
-            <div class="title">
-                <h1>Our Package</h1>
-            </div>
-            <div class="package-content">
-                <div class="content-list">
-                    <img src="img/japan.jpg" alt="Japan" />
-                    <div class="layer">
-                        <h3>Japan</h3>
-                        <p>
-                            Experience the unique blend of tradition and modernity in Japan. Explore ancient 
-                            temples, futuristic cities, and breathtaking natural beauty.
-                        </p>
-                    </div>
-                </div>
-                <div class="content-list">
-                    <img src="img/china.jpg" alt="China" />
-                    <div class="layer">
-                        <h3>China</h3>
-                        <p>
-                            Discover the rich history and culture of China, from the Great Wall to dynamic 
-                            cities like Beijing and Shanghai, along with its delightful cuisine.
-                        </p>
-                    </div>
-                </div>
-                <div class="content-list">
-                    <img src="img/england.jpg" alt="England" />
-                    <div class="layer">
-                        <h3>England</h3>
-                        <p>
-                            Explore England's history and charm by visiting grand palaces, historic cities, 
-                            and beautiful countryside landscapes.
-                        </p>
-                    </div>
-                </div>
-                <div class="content-list">
-                    <img src="img/india.jpg" alt="India" />
-                    <div class="layer">
-                        <h3>India</h3>
-                        <p>
-                            Experience India's rich culture and spirituality. Visit the Taj Mahal, colorful 
-                            festivals, and enjoy the diverse and tantalizing cuisine.
-                        </p>
-                    </div>
-                </div>
-                <div class="content-list">
-                    <img src="img/italy.jpg" alt="Italy" />
-                    <div class="layer">
-                        <h3>Italy</h3>
-                        <p>
-                            Enjoy the beauty of Italy with unmatched art, history, and cuisine. Visit Rome, 
-                            Venice, and Florence for an unforgettable experience.
-                        </p>
-                    </div>
-                </div>
-                <div class="content-list">
-                    <img src="img/france.jpg" alt="Paris" />
-                    <div class="layer">
-                        <h3>Paris</h3>
-                        <p>
-                            The city of love and light, Paris offers stunning architecture, art, and fashion. 
-                            Enjoy the Eiffel Tower, the Louvre, and romantic cafes.
-                        </p>
-                    </div>
-                </div>
-                <div class="content-list">
-                    <img src="img/singapore.jpg" alt="Singapore" />
-                    <div class="layer">
-                        <h3>Singapore</h3>
-                        <p>
-                            Modern and green, Singapore offers beautiful gardens, world-class shopping, and 
-                            a diverse and impressive culinary scene.
-                        </p>
-                    </div>
-                </div>
-                <div class="content-list">
-                    <img src="img/turki.jpg" alt="Turkey" />
-                    <div class="layer">
-                        <h3>Turkey</h3>
-                        <p>
-                            Discover the blend of Eastern and Western cultures in Turkey. Explore historic 
-                            Istanbul, the stunning landscapes of Cappadocia, and beautiful beaches on the 
-                            Turkish Riviera.
-                        </p>
-                    </div>
+        <!-- Stats -->
+        <section class="stats" aria-label="Wanderly in numbers">
+            <div class="container">
+                <div class="stats__grid reveal">
+                    <div><div class="stats__num"><span data-count="12000" data-suffix="+">12,000+</span></div><div class="stats__label" data-i18n="stats.travelers">Happy travelers</div></div>
+                    <div><div class="stats__num"><span data-count="45" data-suffix="+">45+</span></div><div class="stats__label" data-i18n="stats.destinations">Destinations</div></div>
+                    <div><div class="stats__num"><span data-count="10" data-suffix="">10</span></div><div class="stats__label" data-i18n="stats.years">Years of experience</div></div>
+                    <div><div class="stats__num"><span data-count="4.9" data-decimals="1" data-suffix="/5">4.9/5</span></div><div class="stats__label" data-i18n="stats.rating">Average rating</div></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Call to Action -->
-    <section class="call-to-action" id="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h1>Discover Your Dream Vacation</h1>
-                <p>Ready to explore the world? Whether you're seeking adventure, relaxation, or a cultural 
-                    experience, we have the perfect holiday package for you. Don't wait—your dream vacation 
-                    is just a click away!</p>
-                <a href="#contact" class="btn-book">Book Now</a>
+        <!-- Services -->
+        <section class="section" id="services">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow" data-i18n="services.eyebrow">Why Wanderly</span>
+                    <h2 data-i18n="services.title">Everything you need for a perfect trip</h2>
+                    <p data-i18n="services.subtitle">We take care of the planning, so every journey feels effortless.</p>
+                </div>
+                <div class="services__grid">
+                    <article class="service-card reveal">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        <h3 data-i18n="svc.1.title">Unique Destinations</h3>
+                        <p data-i18n="svc.1.desc">Uncover hidden gems and iconic landmarks with routes our local experts have tested themselves.</p>
+                    </article>
+                    <article class="service-card reveal" style="--d:80ms">
+                        <i class="fa-solid fa-route" aria-hidden="true"></i>
+                        <h3 data-i18n="svc.2.title">Personalized Plans</h3>
+                        <p data-i18n="svc.2.desc">Tell us your pace, budget and interests — we tailor the itinerary around you.</p>
+                    </article>
+                    <article class="service-card reveal" style="--d:160ms">
+                        <i class="fa-solid fa-headset" aria-hidden="true"></i>
+                        <h3 data-i18n="svc.3.title">24/7 Support</h3>
+                        <p data-i18n="svc.3.desc">A real person is always one message away, before and during your trip.</p>
+                    </article>
+                    <article class="service-card reveal" style="--d:240ms">
+                        <i class="fa-solid fa-tags" aria-hidden="true"></i>
+                        <h3 data-i18n="svc.4.title">Best Price Promise</h3>
+                        <p data-i18n="svc.4.desc">Transparent pricing with no hidden fees. Found it cheaper? We will match it.</p>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                <h1 class="sub-title">Contact Us</h1>
-                <p><i class="fa-solid fa-envelope"></i> travelagency@gmail.com</p>
-                <p><i class="fa-solid fa-phone"></i> +62 xxxxxxxxxxxx</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+        <!-- Packages -->
+        <section class="section section--alt" id="packages">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow" data-i18n="packages.eyebrow">Our Packages</span>
+                    <h2 data-i18n="packages.title">Popular trips, ready to book</h2>
+                    <p data-i18n="packages.subtitle">Prices shown are per person, starting from — final quote is confirmed by our team.</p>
                 </div>
+                <div class="filters" id="filters" role="group" data-i18n-attr="aria-label:filter.label" aria-label="Filter packages by region">
+                    <button type="button" class="chip" data-region="all" aria-pressed="true" data-i18n="filter.all">All</button>
+                    <button type="button" class="chip" data-region="asia" aria-pressed="false" data-i18n="filter.asia">Asia</button>
+                    <button type="button" class="chip" data-region="europe" aria-pressed="false" data-i18n="filter.europe">Europe</button>
                 </div>
-                <div class="contact-right">
-                    <form id="contactForm">
-                        <input type="text" name="Name" placeholder="Your Name" required />
-                        <input type="email" name="email" placeholder="Your Email" required/>
-                        <select name="options" required>
-                            <option value="" disabled selected>Select an Option</option>
-                            <option value="Japan">Japan</option>
-                            <option value="China">China</option>
-                            <option value="England">England</option>
-                            <option value="India">India</option>
-                            <option value="Italy">Italy</option>
-                            <option value="Paris">Paris</option>
-                            <option value="Singapore">Singapore</option>
-                            <option value="Turkey">Turkey</option>
-                        </select>
-                        <button type="submit" class="btn btn2">Submit</button>
+                <div class="packages__grid" id="packagesGrid"></div>
+            </div>
+        </section>
+
+        <!-- Reviews -->
+        <section class="section" id="reviews">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow" data-i18n="reviews.eyebrow">Reviews</span>
+                    <h2 data-i18n="reviews.title">Loved by travelers</h2>
+                    <p data-i18n="reviews.subtitle">Real stories from people who trusted us with their holidays.</p>
+                </div>
+                <div class="reviews__grid">
+                    <figure class="review reveal">
+                        <div class="review__stars" aria-label="5 / 5">★★★★★</div>
+                        <blockquote data-i18n="rev.1.text">Everything was organised down to the minute. Our Japan trip was stress-free and absolutely magical.</blockquote>
+                        <figcaption class="review__who"><span class="review__avatar" aria-hidden="true">R</span><div><strong data-i18n="rev.1.name">Rina Putri</strong><span data-i18n="rev.1.trip">Japan Discovery</span></div></figcaption>
+                    </figure>
+                    <figure class="review reveal" style="--d:100ms">
+                        <div class="review__stars" aria-label="5 / 5">★★★★★</div>
+                        <blockquote data-i18n="rev.2.text">The team customised our Italy itinerary for the kids. Responsive support even at midnight!</blockquote>
+                        <figcaption class="review__who"><span class="review__avatar" aria-hidden="true">B</span><div><strong data-i18n="rev.2.name">Budi Santoso</strong><span data-i18n="rev.2.trip">Italian Dolce Vita</span></div></figcaption>
+                    </figure>
+                    <figure class="review reveal" style="--d:200ms">
+                        <div class="review__stars" aria-label="5 / 5">★★★★★</div>
+                        <blockquote data-i18n="rev.3.text">Booking took five minutes and the price was exactly as quoted. Will travel with Wanderly again.</blockquote>
+                        <figcaption class="review__who"><span class="review__avatar" aria-hidden="true">S</span><div><strong data-i18n="rev.3.name">Sari Wulandari</strong><span data-i18n="rev.3.trip">Paris Romance</span></div></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section section--white" id="faq">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow" data-i18n="faq.eyebrow">FAQ</span>
+                    <h2 data-i18n="faq.title">Frequently asked questions</h2>
+                    <p data-i18n="faq.subtitle">Quick answers before you book.</p>
+                </div>
+                <div class="faq reveal">
+                    <details><summary data-i18n="faq.1.q">How does booking work?</summary><p data-i18n="faq.1.a">Pick a package, fill in the short form and send it via WhatsApp. Our team confirms availability and the final price, then guides you through payment.</p></details>
+                    <details><summary data-i18n="faq.2.q">Can I customise a package?</summary><p data-i18n="faq.2.a">Absolutely. Add your wishes in the notes field and we will adjust hotels, activities and duration.</p></details>
+                    <details><summary data-i18n="faq.3.q">What is your cancellation policy?</summary><p data-i18n="faq.3.a">Free cancellation up to 30 days before departure. Closer dates depend on supplier rules, which we explain before you pay.</p></details>
+                    <details><summary data-i18n="faq.4.q">Do you help with visas and insurance?</summary><p data-i18n="faq.4.a">Yes. We provide document checklists, visa guidance and optional travel insurance.</p></details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta" id="cta">
+            <div class="container reveal">
+                <h2 data-i18n="cta.title">Discover your dream vacation</h2>
+                <p data-i18n="cta.text">Whether you seek adventure, relaxation or culture, we have the perfect holiday for you. Your next story starts with one message.</p>
+                <a href="#contact" class="btn btn--accent" data-i18n="cta.button">Start Planning</a>
+            </div>
+        </section>
+
+        <!-- Contact & Booking -->
+        <section class="section" id="contact">
+            <div class="container contact__grid">
+                <div class="contact__info reveal">
+                    <span class="eyebrow" data-i18n="contact.eyebrow">Contact &amp; Booking</span>
+                    <h2 data-i18n="contact.title">Let’s plan your trip</h2>
+                    <p data-i18n="contact.subtitle">Share your plan and our team replies within 24 hours.</p>
+                    <ul class="contact__list">
+                        <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:hello@wanderly.example">hello@wanderly.example</a></li>
+                        <li><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:+6281234567890">+62 812-3456-7890</a></li>
+                        <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span data-i18n="contact.address">Jl. Contoh Raya No. 88, Bandung, Indonesia</span></li>
+                        <li><i class="fa-solid fa-clock" aria-hidden="true"></i><span data-i18n="contact.hours">Mon–Sat, 09:00–18:00 (WIB)</span></li>
+                    </ul>
+                    <div class="social" aria-label="Social media">
+                        <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+
+                <div class="card-form reveal" style="--d:120ms">
+                    <form id="bookingForm" novalidate>
+                        <h3 data-i18n="form.title">Booking request</h3>
+                        <div class="form-grid">
+                            <div class="field full">
+                                <label for="f-name" data-i18n="form.name">Full name</label>
+                                <input id="f-name" name="name" type="text" autocomplete="name" maxlength="80" aria-describedby="err-name"
+                                       data-i18n-attr="placeholder:form.name.ph" placeholder="e.g. Rina Putri">
+                                <span class="field__error" id="err-name" aria-live="polite"></span>
+                            </div>
+                            <div class="field">
+                                <label for="f-email" data-i18n="form.email">Email</label>
+                                <input id="f-email" name="email" type="email" autocomplete="email" maxlength="120" aria-describedby="err-email"
+                                       data-i18n-attr="placeholder:form.email.ph" placeholder="you@example.com">
+                                <span class="field__error" id="err-email" aria-live="polite"></span>
+                            </div>
+                            <div class="field">
+                                <label for="f-phone" data-i18n="form.phone">WhatsApp number</label>
+                                <input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" aria-describedby="err-phone"
+                                       data-i18n-attr="placeholder:form.phone.ph" placeholder="+62 812 3456 7890">
+                                <span class="field__error" id="err-phone" aria-live="polite"></span>
+                            </div>
+                            <div class="field full">
+                                <label for="f-destination" data-i18n="form.destination">Package</label>
+                                <select id="f-destination" name="destination" aria-describedby="err-destination"></select>
+                                <span class="field__error" id="err-destination" aria-live="polite"></span>
+                            </div>
+                            <div class="field">
+                                <label for="f-date" data-i18n="form.date">Departure date</label>
+                                <input id="f-date" name="date" type="date" aria-describedby="err-date">
+                                <span class="field__error" id="err-date" aria-live="polite"></span>
+                            </div>
+                            <div class="field">
+                                <label for="f-travelers" data-i18n="form.travelers">Travelers</label>
+                                <input id="f-travelers" name="travelers" type="number" min="1" max="50" value="2" inputmode="numeric" aria-describedby="err-travelers">
+                                <span class="field__error" id="err-travelers" aria-live="polite"></span>
+                            </div>
+                            <div class="field full">
+                                <label for="f-notes" data-i18n="form.notes">Notes (optional)</label>
+                                <textarea id="f-notes" name="notes" maxlength="500"
+                                          data-i18n-attr="placeholder:form.notes.ph" placeholder="Special requests, budget, dietary needs…"></textarea>
+                            </div>
+                            <div class="full" aria-live="polite">
+                                <p class="form-note"><strong data-i18n="form.estimate">Estimated total</strong>: <span id="estimate">—</span></p>
+                            </div>
+                            <div class="field full">
+                                <label class="consent" for="f-consent">
+                                    <input id="f-consent" name="consent" type="checkbox" aria-describedby="err-consent">
+                                    <span data-i18n="form.consent">I agree to be contacted about this booking and understand prices are estimates.</span>
+                                </label>
+                                <span class="field__error" id="err-consent" aria-live="polite"></span>
+                            </div>
+                            <div class="hp" aria-hidden="true">
+                                <label for="f-website">Website</label>
+                                <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn--primary" id="submitBtn"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> <span data-i18n="form.submit">Send via WhatsApp</span></button>
+                        <p class="form-note" style="margin-top:12px" data-i18n="form.note">No payment is taken now. Our team will confirm availability and the final price.</p>
                     </form>
+
+                    <div class="success" id="bookingSuccess" hidden tabindex="-1">
+                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                        <h3 data-i18n="form.success.title">Request ready!</h3>
+                        <p data-i18n="form.success.text">We opened WhatsApp with your details. If nothing opened, use the button below.</p>
+                        <div class="success__ref"><span data-i18n="form.success.ref">Reference</span>: <span id="refCode"></span></div>
+                        <div>
+                            <a class="btn btn--primary" id="waLink" href="#" target="_blank" rel="noopener noreferrer" data-i18n="form.success.open">Open WhatsApp</a>
+                        </div>
+                        <button type="button" class="btn btn--outline" id="bookAgain" data-i18n="form.success.again">Make another booking</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="my-footer">
-        &copy; Created by Fazry Javier
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div>
+                    <a href="#home" class="brand"><img src="img/logo.svg" alt="" width="40" height="40"><span>Wanderly</span></a>
+                    <p class="footer__tag" data-i18n="footer.tagline">Your trusted travel partner for journeys that matter.</p>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.explore">Explore</h4>
+                    <ul>
+                        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                        <li><a href="#packages" data-i18n="nav.packages">Packages</a></li>
+                        <li><a href="#reviews" data-i18n="nav.reviews">Reviews</a></li>
+                        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.contact">Contact</h4>
+                    <ul>
+                        <li><a href="mailto:hello@wanderly.example">hello@wanderly.example</a></li>
+                        <li><a href="tel:+6281234567890">+62 812-3456-7890</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer__bottom" data-i18n="footer.rights">© 2026 Wanderly Travel. All rights reserved. Demo project — all content is dummy.</p>
+        </div>
     </footer>
 
-    <script src="js/script.js"></script>
-    <script src="https://kit.fontawesome.com/0dc8571071.js" crossorigin="anonymous"></script>
+    <a href="https://wa.me/6281234567890" class="wa-float" target="_blank" rel="noopener noreferrer"
+       data-i18n-attr="aria-label:wa.float" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+
+    <script type="module" src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/0dc8571071.js" crossorigin="anonymous" defer></script>
 </body>
 </html>
